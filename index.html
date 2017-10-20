@@ -238,14 +238,34 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h5><pre><code>首先你需要有github账号、nodejs
-</code></pre><h4 id="开始"><a href="#开始" class="headerlink" title="开始"></a>开始</h4><pre><code>1.用npm安装 hexo。 
-  npm install -g hexo
-2.按照hexo官网要求创建 hexo 项目,并安装依赖
-  hexo init &lt;folder&gt;
-  cd &lt;folder&gt;
-  cnpm install
-</code></pre>
+        <h5 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h5><pre><code>首先你需要有github账号、nodejs、git客户端
+</code></pre><h5 id="用npm安装-hexo。"><a href="#用npm安装-hexo。" class="headerlink" title="用npm安装 hexo。"></a>用npm安装 hexo。</h5><pre><code>npm install -g hexo
+</code></pre><h5 id="按照hexo官网要求创建-hexo-项目-并安装依赖"><a href="#按照hexo官网要求创建-hexo-项目-并安装依赖" class="headerlink" title="按照hexo官网要求创建 hexo 项目,并安装依赖"></a>按照hexo官网要求创建 hexo 项目,并安装依赖</h5><pre><code>hexo init &lt;folder&gt;
+cd &lt;folder&gt;
+cnpm install
+</code></pre><h4 id="使用hexo命令查看"><a href="#使用hexo命令查看" class="headerlink" title="使用hexo命令查看"></a>使用hexo命令查看</h4><pre><code>hexo g 生成文件
+hexo s 在本地运行服务
+</code></pre><p>显示一下信息即表示成功：</p>
+<pre><code>INFO  Start processing
+INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.
+在浏览器输入localhost:4000即可看到欢迎页面。
+</code></pre><hr>
+<h3 id="与github建立连接"><a href="#与github建立连接" class="headerlink" title="与github建立连接"></a>与github建立连接</h3><hr>
+<h4 id="git上建立一个新的项目"><a href="#git上建立一个新的项目" class="headerlink" title="git上建立一个新的项目"></a>git上建立一个新的项目</h4><p>1.创建一个新的项目作为博客的静态页面存放地址,创建 <a href="https://github.com/new">地址</a><br>2.git客户端当中将项目pull下来。目的是为了让这个项目真实存在在github上面。<br>3.访问 github用户名.github.io/项目名 就可以访问我们的github服务器</p>
+<hr>
+<h4 id="安装git插件"><a href="#安装git插件" class="headerlink" title="安装git插件"></a>安装git插件</h4><hr>
+<pre><code>git部署需要使用的插件
+cnpm install hexo-deployer-git --save
+</code></pre><h4 id="修改hexo配置文件"><a href="#修改hexo配置文件" class="headerlink" title="修改hexo配置文件"></a>修改hexo配置文件</h4><p>主要是修改deploy，配置hexo到github上面。可查看hexo官网<a href="https://hexo.io/zh-cn/docs/deployment.html" target="_blank" rel="external">部署文档</a></p>
+<pre><code>deploy：
+ type: git
+ repository: https://github.com/github名/项目名
+ branch: 分支名
+此处一定注意 : 后面有空格。
+</code></pre><hr>
+<h4 id="运行hexo命令"><a href="#运行hexo命令" class="headerlink" title="运行hexo命令"></a>运行hexo命令</h4><pre><code>hexo d 即可完成部署，有修改会自动提交到git上面
+</code></pre><p>此处有可能会包公钥错误，此时是因为ssh链接安全问题导致，需要在github申请公钥，然后配置到你的git账号下。可查询如何创建git 公钥。</p>
+
       
 
       
